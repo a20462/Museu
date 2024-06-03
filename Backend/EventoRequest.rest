@@ -1,0 +1,31 @@
+// ----- Cliente ---- 
+### Adicionar - Serviço ###
+POST http://localhost:2000/api/eventos
+Content-Type: application/json
+
+{
+	"tipo": "Exposição Familiar",
+	"nome": "Império Romano - Sem fronteiras",
+	"horario": "10h00 - 13h00",
+	"data": "24/09/2024"
+}
+
+### Listagem - TUDO ###
+GET http://localhost:2000/api/eventos
+
+### Listagem - By ID ###
+GET http://localhost:2000/api/eventos/664b22eabc63c671b771598f
+
+### Apagar - By ID ###
+DELETE http://localhost:2000/api/eventos/664b22eabc63c671b771598f
+
+### Atualizar - By ID ###
+PUT http://localhost:2000/api/eventos/664b1f410c9d86e7377a820f
+Content-Type: application/json
+
+{
+	"tipo": "Exposição Familiar",
+	"nome": "Império Romano - Sem fronteiras",
+	"horario": "10h00 - 13h00",
+	"data": "24/09/2024"
+}

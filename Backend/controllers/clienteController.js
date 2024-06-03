@@ -23,7 +23,7 @@ const clienteController = {
     //LISTAGEM - ALL
     getAll: async (req, res) => { //resgate de todos os clientes 
         try {
-            const clientes = await ClienteModel.find();
+            const clientes = await Cliente.find();
 
             res.json(clientes);
         } catch (error) {
@@ -34,7 +34,7 @@ const clienteController = {
     get: async (req, res) => {
         try {
             const id = req.params.id
-            const cliente = await ClienteModel.findById(id);
+            const cliente = await Cliente.findById(id);
 
             if(!cliente) {
                 res.status(404).json({msg: "Cliente não encontrado"});
@@ -50,14 +50,14 @@ const clienteController = {
     delete: async (req, res) => {
         try {
             const id = req.params.id;
-            const cliente = await ClienteModel.findById(id);
+            const cliente = await Cliente.findById(id);
 
             if(!cliente) {
                 res.status(404).json({msg: "Cliente não encontrado"});
                 return;
             }
 
-            const deletedCliente = await ClienteModel.findByIdAndDelete(id);
+            const deletedCliente = await Cliente.findByIdAndDelete(id);
 
             res.status(200).json({deletedCliente, msg: "Cliente excluído com Sucesso"}); //Exclusões
 
@@ -74,11 +74,11 @@ const clienteController = {
             nome: req.body.nome,
             email: req.body.email,
             date: req.body.date,
-            telemovel: req.body.nome,
+            telemovel: req.body.telemovel,
             nif: req.body.nif,
         };
 
-        const updatedCliente = await ClienteModel.findByIdAndUpdate(id, cliente)
+        const updatedCliente = await Cliente.findByIdAndUpdate(id, cliente)
 
         if(!updatedCliente) {
             res.status(404).json({msg: "Cliente não encontrado"});

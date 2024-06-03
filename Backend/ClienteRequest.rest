@@ -4,11 +4,11 @@ POST http://localhost:2000/api/clientes
 Content-Type: application/json
 
 {
-	"nome": "Artur Marques",
-	"email": "Amarques@gmail.com",
-	"telemovel": "987654321",
-	"date": "7/9/2001",
-	"nif": "248642378"
+	"nome": "Nuno Silva",
+	"email": "Nsilva@gmail.com",
+	"telemovel": "987654333",
+	"date": "11/9/2000",
+	"nif": "248642998"
 }
 
 ### Listagem - TUDO ###
@@ -21,11 +21,13 @@ GET http://localhost:2000/api/clientes/664b22eabc63c671b771598f
 DELETE http://localhost:2000/api/clientes/664b22eabc63c671b771598f
 
 ### Atualizar - By ID ###
-PUT http://localhost:2000/api/clientes/664b1f410c9d86e7377a820f
+PUT http://localhost:2000/api/clientes/665c487dd3cbd6baf22dbefb
 Content-Type: application/json
 
 {
-	"nome": "Fernando Santos",
-	"email": "FSantos2@gmail.com",
-	"telemovel": "911222333"
+	"nome": "António Marques",
+	"email": "Amarques@gmail.com",
+	"telemovel": "987654321",
+	"date": "7/9/2001",
+	"nif": "248642378"
 }
